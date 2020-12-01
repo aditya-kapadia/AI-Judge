@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <style>
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AI JUDGE</a>
+    </div>
+<!--                <img src="../judge.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236" align="center">   -->
+
+<!--    <ul class="nav navbar-nav">
+      <li class="active" align="right"><a href="#">Home</a></li>
+     <li><a href="#">Page 1</a></li>   
+
+    </ul>
+     -->
+       <ul class="nav navbar-nav navbar-right">
+      <li class="active" align="right"><a href="#">Home</a></li>
+<!--      <li><a href="#">Page 1</a></li>   -->
+
+    </ul>
+  </div>
+</nav>
+    
+    	<header>
+		<div class="container">
+<!--		<div id="brandname">
+			Machine Learning App with Flask
+		</div>--><br/><br/><br/><br/>
+		<h2 align="center"><font face="vintage" size=100>AI Judge : An Intelligent Justice System</font></h2>
+		
+	</div>
+	</header>
+    
+    <br/><br/>
+	<h4 style="font-size:20;text-align: center;"><b>Your Case will be</b></h4>
+	<div class="results">
+
+        <div class="w3-container w3-center w3-animate-zoom">
+		
+	{% if prediction == 0%}
+	<h2 style="color:red;">REVERSED</h2>
+	{% elif prediction == 1%}
+	<h2 style="color:blue;">AFFIRMED</h2>
+	{% endif %}
+        </div>
+	</div>
+<div class="footer">
+  <p>Footer</p>
+</div>
+</body>
+</html>

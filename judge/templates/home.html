@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+<style>
+        textarea {
+              padding: 12px 20px;
+              box-sizing: border-box;
+              border: 2px solid #ccc;
+              border-radius: 4px;
+              background-color: #f8f8f8;
+              font-size: 16px;
+              resize: none;
+                /*text area at center*/
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        
+        .btn-info {  padding: 12px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+            border-radius: 8px;}
+
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: black;
+           color: white;
+           text-align: center;
+        }
+        body{
+            background-image: url(../judge.jpg)
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+
+            /* Create two equal columns that floats next to each other */
+    /*     
+    .column {
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 300px; /* Should be removed. Only for demonstration */
+            }
+*/
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+        
+        #bt_doc{
+             margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .file-upload{
+            width: 400px; 
+            left: 70%;
+            
+            transform: translate(25%, -50%);
+        }
+    /* for choose file */    
+  /*      
+        .file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+    */
+    </style>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+  /*  
+    $('#chooseFile').bind('change', function () {
+  var filename = $("#chooseFile").val();
+  if (/^\s*$/.test(filename)) {
+    $(".file-upload").removeClass('active');
+    $("#noFile").text("No file chosen..."); 
+  }
+  else {
+    $(".file-upload").addClass('active');
+    $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+  }
+});
+*/
+    </script>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">AI JUDGE</a>
+    </div>
+<!--                <img src="../judge.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236" align="center">   -->
+
+<!--    <ul class="nav navbar-nav">
+      <li class="active" align="right"><a href="#">Home</a></li>
+     <li><a href="#">Page 1</a></li>   
+
+    </ul>
+     -->
+       <ul class="nav navbar-nav navbar-right">
+      <li class="active" align="right"><a href="#">Home</a></li>
+<!--      <li><a href="#">Page 1</a></li>   -->
+
+    </ul>
+  </div>
+</nav>
+    
+	<header>
+		<div class="container">
+<!--		<div id="brandname">
+			Machine Learning App with Flask
+		</div>--><br/><br/><br/><br/>
+		<h2 align="center"><font face="vintage" size=100>AI Judge : An Intelligent Justice System</font></h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+        
+        <div class="row">
+            <div class="column">
+                    <form action="{{ url_for('predict')}}" method="POST">
+                    <h4 align="center"><font face="vintage">What will be the result of my Appeal?</font></h4>
+		<!-- <input type="text" name="comment"/> -->
+                    <textarea name="message" rows="10" cols="50"></textarea>
+                    <br/>
+                    <div style="text-align:center">
+                    <input type="submit" class="btn-info" value="Submit">
+                    </div>
+                    </form>
+            </div>
+            <!--
+	       <div class="column">
+               <br/><br/><br/><br/><br/>
+               <div style="text-align:center">
+                   <div class="file-upload">
+                          <div class="file-select">
+                              
+                            <div class="file-select-button" id="fileName">Choose File</div>
+                            <div class="file-select-name" id="noFile">No file chosen...</div> 
+                            <input type="file" name="chooseFile" id="chooseFile">
+                          </div>
+                        </div>
+                    <input type="submit" id ="bt_doc" class="btn-info" value="Upload">
+                    </div>
+            </div>
+-->
+        </div>
+	</div>
+
+	<div class="footer">
+  <p>Footer</p>
+</div>
+	
+
+</body>
+</html>
